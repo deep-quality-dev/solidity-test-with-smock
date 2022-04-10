@@ -13,7 +13,8 @@ contract MyERC20 is ERC20, Ownable, IMyERC20 {
     }
 
     function mintUpTo(address to, uint256 amount)
-        external override
+        external
+        override
         onlyOwner
         returns (uint256)
     {
@@ -29,7 +30,12 @@ contract MyERC20 is ERC20, Ownable, IMyERC20 {
         return mintBalance;
     }
 
-    function addUp(uint256 a, uint256 b) external  override pure returns (uint256) {
+    function addUp(uint256 a, uint256 b)
+        external
+        pure
+        override
+        returns (uint256)
+    {
         return a + b;
     }
 }

@@ -36,10 +36,6 @@ describe("MyOtherContract", function () {
     expect((await myERC20.totalSupply()).toString()).to.be.equal("300");
   });
 
-  it("Should set internal storage for mocking", async function () {
-    // nothing
-  });
-
   it("Should sign a transaction", async function () {
     const amount = 200;
     await myERC20.connect(owner).mintUpTo(userA.address, amount);
