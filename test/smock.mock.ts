@@ -1,5 +1,5 @@
-import { expect } from "chai";
-import { MockContract, smock } from "@defi-wonderland/smock";
+import chai, { expect } from "chai";
+import { FakeContract, MockContract, smock } from "@defi-wonderland/smock";
 import { BigNumber } from "@ethersproject/bignumber";
 
 import {
@@ -11,13 +11,15 @@ import {
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ethers } from "hardhat";
 
+chai.use(smock.matchers);
+
 describe("MyOtherContract", function () {
   let owner: SignerWithAddress, userA: SignerWithAddress;
 
   let myERC20: MockContract<MyERC20>,
     myOtherContract: MockContract<MyOtherContract>;
 
-  beforeEach("init setup", async () => {
+  beforeEach("init setup", async function () {
     [owner, userA] = await ethers.getSigners();
 
     const myOtherContractFactory = await smock.mock<MyOtherContract__factory>(

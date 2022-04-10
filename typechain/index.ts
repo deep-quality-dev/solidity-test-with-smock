@@ -5,6 +5,7 @@ export type { Ownable } from "./Ownable";
 export type { ERC20 } from "./ERC20";
 export type { IERC20Metadata } from "./IERC20Metadata";
 export type { IERC20 } from "./IERC20";
+export type { IMyERC20 } from "./IMyERC20";
 export type { MyERC20 } from "./MyERC20";
 export type { MyOtherContract } from "./MyOtherContract";
 
@@ -12,5 +13,6 @@ export { Ownable__factory } from "./factories/Ownable__factory";
 export { ERC20__factory } from "./factories/ERC20__factory";
 export { IERC20Metadata__factory } from "./factories/IERC20Metadata__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
+export { IMyERC20__factory } from "./factories/IMyERC20__factory";
 export { MyERC20__factory } from "./factories/MyERC20__factory";
 export { MyOtherContract__factory } from "./factories/MyOtherContract__factory";

@@ -17,8 +17,6 @@ contract MyOtherContract {
         // do stuff
 
         uint256 returnAmount = myERC20.mintUpTo(to, amount);
-        myERC20.mintUpTo(to, amount);
-        myERC20.mintUpTo(to, amount);
 
         uint256 totalSupply = myERC20.totalSupply();
         console.log("totalSupply", totalSupply);

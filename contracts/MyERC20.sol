@@ -3,16 +3,17 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./IMyERC20.sol";
 
 import "hardhat/console.sol";
 
-contract MyERC20 is ERC20, Ownable {
+contract MyERC20 is ERC20, Ownable, IMyERC20 {
     constructor() ERC20("MyERC20", "MYE") {
         this;
     }
 
     function mintUpTo(address to, uint256 amount)
-        external
+        external override
         onlyOwner
         returns (uint256)
     {
@@ -28,7 +29,7 @@ contract MyERC20 is ERC20, Ownable {
         return mintBalance;
     }
 
-    function addUp(uint256 a, uint256 b) external pure returns (uint256) {
+    function addUp(uint256 a, uint256 b) external  override pure returns (uint256) {
         return a + b;
     }
 }
